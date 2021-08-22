@@ -1,0 +1,52 @@
+{
+  "name": "typescript-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ogeday26/typescript-boilerplate.git",
+  "author": "Ogeday <safa@rubiklabs.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon",
+    "test": "cross-env TS_NODE_FILES=true mocha — exit — require ts-node/register — colors test/**/*.ts",
+    "coverage:cobertura": "nyc --reporter cobertura npm run test",
+    "coverage:html": "nyc --reporter html npm run test",
+    "lint": "eslint --fix src --ext ts",
+    "tsc": "tsc"
+  },
+  "keywords": [
+    "typescript",
+    "boilerplate",
+    "typescript-boilerplate",
+    "nodemon",
+    "mocha",
+    "cross-env",
+    "eslint",
+    "nyc"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && git add -A ."
+    }
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.7.1",
+    "@typescript-eslint/parser": "^4.29.2",
+    "chai": "^4.3.4",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.1",
+    "eslint-plugin-promise": "^5.1.0",
+    "husky": "^7.0.1",
+    "mocha": "^9.1.0",
+    "nodemon": "^2.0.12",
+    "nyc": "^15.1.0",
+    "supertest": "^6.1.6",
+    "ts-node": "^10.2.1",
+    "tsc": "^2.0.3",
+    "typescript": "^4.3.5"
+  }
+}
